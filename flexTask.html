@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            border: none;
+        }
+        .parent-flex{
+            margin: 0px;
+            display: flex;
+            border: none;
+            flex-direction: column;
+            height: 100vh;
+            padding: 0px;
+        }
+    
+        .main-bar-flex{
+            display: flex;
+            flex-direction: row;
+            border:none;
+            margin: 0px;
+            background-color: rgb(97, 42, 102);
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 50px;
+
+        }
+        .main-bar-flex a{
+          text-align: left;
+          font-size: large;
+          font-family: sans-serif;
+          color: white;
+          padding-left: 20px;
+          padding-top: 20px;
+
+        }
+        .main-bar-flex img{
+          padding-left: 20px;
+          padding-top: 15px;
+        }
+        .main-bar-flex button{
+          margin-left: 10px;
+          border-radius: 50%;
+          border-color: white;
+          width: 20px;
+          height: 20px;
+          margin-top: 20px;
+        }
+        .main-bar-flex .flex-grow1{
+          flex-grow: 1;          
+        }
+      
+        .body-flex{
+            display: flex ;
+            flex-direction: row;
+            margin: 0px;
+            background-color: blanchedalmond;
+            flex-grow: 1;
+        }
+
+        .right-flex{
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+        background-color: rgb(205, 209, 216);
+        width: 100vw;
+        flex-grow: 1;
+        flex-basis: 0;
+        }
+        .right-flex .child-right1{
+            display: flex;
+            flex-direction: row;
+            border: none;
+
+            text-align: center;
+            height: 100%; 
+            padding: 20px;      
+        }
+        .right-flex .child-right2{
+            display: flex;
+            flex-direction: row;
+            border:none;
+            text-align: center;
+            height: 100%;
+            padding: 0px 20px 20px 20px;
+        }
+        .body-flex .left{
+        text-align: center;
+        background-color: rgb(153, 96, 151);
+        width: 100px;
+        margin: 0px;
+        height: 100%;
+        }
+      
+        .parent-flex .footer{
+        background-color: rgb(97, 42, 102);
+        width: 100%;
+        height: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        }
+        .circle {
+        position: fixed;
+        bottom: 30px;
+        right: 50px;
+        z-index: 999;
+        cursor: pointer;
+        }
+
+        .fab-icon-holder {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #814283c0;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .fab-icon-holder:hover {
+        opacity: 0.8;
+        }
+
+        .fab-icon-holder i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 25px;
+        color: #653c6693;
+        }
+
+        .fab {
+        width: 60px;
+        height: 60px;
+        background: #993f84ee;
+        }
+
+        .fab-options {
+        list-style-type: none;
+        margin: 0;
+        position: absolute;
+        bottom: 70px;
+        right: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+        transform: scale(0);
+        transform-origin: 85% bottom;
+        }
+
+        .fab:hover+.fab-options,
+        .fab-options:hover {
+        opacity: 1;
+        transform: scale(1);
+        }
+
+        .fab-options li {
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px;
+        }
+
+        .fab-label {
+        padding: 2px 5px;
+        align-self: center;
+        user-select: none;
+        white-space: nowrap;
+        border-radius: 3px;
+        font-size: 16px;
+        background: #666666;
+        color: #ffffff;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        margin-right: 10px;
+        }
+        .leftContent{
+          margin: 15px;
+          border: 1px solid rgb(233, 210, 227);
+          border-radius: 20px;
+          color: white;
+        }
+        .rightContainer{
+          display: flex;
+          flex-direction: row;
+          border: 3px solid #993f84ee;
+          border-radius: 20px;
+          flex-grow: 1;
+          flex-basis: 0;
+          flex-wrap: wrap;
+          justify-content:space-around;
+          align-items:center;
+
+        }
+        .child-right1  .right-content{
+          border:2px solid #993f84ee;
+          border-radius: 20px;
+          flex-grow: 1;
+          flex-basis: 0;
+          min-width: 200px;
+          height: 50px;
+          background-color: thistle;
+          margin: 20px;
+        }
+        .child-right2  .right-content{
+          border:2px solid #993f84ee;
+          border-radius: 20px;
+          flex-grow: 1;
+          flex-basis: 0;
+          min-width: 300px;
+          height: 50px;
+          background-color: thistle;
+          margin: 20px;
+        }
+       
+    </style>
+</head>
+
+
+<body>
+    <div class="parent-flex">
+   
+        <div class="main-bar-flex">
+              <img src="cardiogram.svg" style="width:30px; height:30px"/>
+              <a>Doctor </a>
+              <a>Patient </a>
+              <a>Apointment </a>
+              <a>Appointment Type </a>
+              <a>Medical History</a>
+              <div class="flex-grow1"> </div>
+                <button> </button>
+                <button> </button> 
+                <button class="b3"> </button>
+             
+        </div>
+        <div class="body-flex">
+            <div class="left">
+              <div class="leftContent">Add</div>
+              <div class="leftContent">Update</div>
+              <div class="leftContent">Delete</div>
+
+            </div>
+            <div class="right-flex">
+                <div class="child-right1"> 
+                    <div class="rightContainer">
+                      <div class="right-content"></div>
+                      <div class="right-content"></div>
+                      <div class="right-content"></div>
+                    </div>
+                </div>
+                <div class="child-right2">
+                  <div class="rightContainer">
+                    <div class="right-content"></div>
+                    <div class="right-content"></div>
+                    <div class="right-content"></div>
+                  </div>
+                </div>
+            </div>
+            
+        </div>
+   
+        <footer class="footer">
+            
+        </footer>
+
+   
+    </div>
+    <div class="circle">
+        <div class="fab fab-icon-holder">
+          <i class="fas fa-question"></i>
+        </div>
+        <ul class="fab-options">
+          <li>
+            <div class="fab-icon-holder">
+              <i class="fas fa-file-alt"></i>
+            </div>
+          </li>
+          <li>
+            <div class="fab-icon-holder">
+              <i class="fas fa-video"></i>
+            </div>
+          </li>
+          <li>
+            <div class="fab-icon-holder">
+              <i class="fas fa-comments"></i>
+            </div>
+          </li>
+          <li>
+            <div class="fab-icon-holder">
+              <i class="fas fa-comment-alt"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+</body>
+</html>
